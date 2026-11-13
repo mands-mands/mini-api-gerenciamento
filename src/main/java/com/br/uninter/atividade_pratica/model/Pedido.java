@@ -11,7 +11,7 @@ public class Pedido {
     private Long id;
 
     @Column(name = "cliente_id", nullable = false)
-    private Long clientId;
+    private Long clienteId;
 
     @Column(name = "produto_id", nullable = false)
     private Long produtoId;
@@ -27,12 +27,12 @@ public class Pedido {
         return id;
     }
 
-    public Long getClientId(){
-        return clientId;
+    public Long getClienteId(){
+        return clienteId;
     }
 
-    public void setClientId(Long clientId){
-        this.clientId = clientId;
+    public void setClienteId(Long clienteId){
+        this.clienteId = clienteId;
     }
 
     public Long getProdutoId(){
