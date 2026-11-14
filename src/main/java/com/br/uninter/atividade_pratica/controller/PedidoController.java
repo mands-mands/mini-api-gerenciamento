@@ -2,7 +2,9 @@ package com.br.uninter.atividade_pratica.controller;
 
 import com.br.uninter.atividade_pratica.dto.request.PedidoRequestDTO;
 import com.br.uninter.atividade_pratica.dto.response.PedidoResponseDTO;
+import com.br.uninter.atividade_pratica.model.Cliente;
 import com.br.uninter.atividade_pratica.model.Pedido;
+import com.br.uninter.atividade_pratica.model.Produto;
 import com.br.uninter.atividade_pratica.repository.ClienteRepository;
 import com.br.uninter.atividade_pratica.repository.PedidoRepository;
 import com.br.uninter.atividade_pratica.repository.ProdutoRepository;
@@ -30,8 +32,8 @@ public class PedidoController {
 
     private PedidoResponseDTO montaPedidoDto(Pedido pedido){
 
-        var clienteNome = clienteRepository.findById(pedido.getClienteId()).get().getNome();
-        var produtoNome = produtoRepository.findById(pedido.getProdutoId()).get().getNome();
+        var clienteNome = clienteRepository.findById(pedido.getClienteId()).map(Cliente::getNome).orElse("Cliente foi removido");
+        var produtoNome = produtoRepository.findById(pedido.getProdutoId()).map(Produto::getNome).orElse("Produto foi removido");
 
         var pedidoDto = new PedidoResponseDTO(
                 pedido.getId(),
