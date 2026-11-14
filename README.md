@@ -76,4 +76,4 @@ Certifique-se de configurar as seguintes variáveis de ambiente com os dados do 
 
 1. Clone este repositório:
    ```bash
-   git clone <URL_DO_SEU_REPOSITORIO_GITHUB>
+   git clone <https://github.com/mands-mands/mini-api-gerenciamento.git>
